@@ -21,6 +21,7 @@
                 </button>
             </div>
             <hr>
+            <span id="msgAlerta"></span>
         </div>
         <div class="row">
             <div class="table-reponsive">
@@ -61,13 +62,19 @@
                                 <input type="date" name="entrada_date" id="entrada_date">
                             </div>
                             <div class="mb-3">
-                                <label for="observação" class="col-form-label">Observação:</label>
-                                <input type="text" name="observação" class="form-control" id="observação" placeholder="Informe a sua idade">
+                                <label for="observacao" class="col-form-label">Observação:</label>
+                                <input type="text" name="observacao" class="form-control" id="observacao" placeholder="Informe a sua idade">
                             </div>
                             <div class="mb-3">
                                 <label for="tipo" class="col-form-label">Tipo de data:</label>
                                 <input type="text" name="tipo" class="form-control" id="tipo" placeholder="Informe o tipo de data">
                             </div>
+                            <p>Selecione a cor como legenda para a data:</p>
+                                <div>
+                                    <input type="color" id="cor" name="cor"
+                                        value="#e66465">
+                                    <label for="cor">Palheta de cores</label>
+                                </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Fechar</button>
                                 <input type="submit" class="btn btn-success btn-sm" id="cad-data-btn" value="Cadastrar" />
@@ -97,7 +104,7 @@
                                 <dd class="col-sm-9"><span id="dataData"></span></dd>
 
                                 <dt class="col-sm-3">Observação</dt>
-                                <dd class="col-sm-9"><span id="observaçãoData"></span></dd>
+                                <dd class="col-sm-9"><span id="observacaoData"></span></dd>
 
                                 <dt class="col-sm-3">Tipos de data</dt>
                                 <dd class="col-sm-9"><span id="tipos_de_dataData"></span></dd>
@@ -113,23 +120,23 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="editDataModalLabel">Alterar informções sobre a data</h5>
+                        <h5 class="modal-title" id="editDataModalLabel">Alterar informações sobre a data</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form id="edit-data-form">
-                            <span id="msgAlertaErroCad"></span>
+                            <span id="msgAlertaErroEdit"></span>
                             <div class="mb-3">
                                 <label for="nome" class="col-form-label">Nome:</label>
                                 <input type="text" name="edit_nome" class="form-control" id="edit_nome" placeholder="Informe seu nome completo">
                             </div>
                             <div class="mb-3">
                                 <label for="data" class="col-form-label">Data:</label>
-                                <input type="date" name="entrada_date" id="entrada_date">
+                                <input type="date" name="edit_data" id="edit_data">
                             </div>
                             <div class="mb-3">
-                                <label for="observação" class="col-form-label">Observação:</label>
-                                <input type="text" name="edit_observação" class="form-control" id="edit_observação" placeholder="Informe a sua idade">
+                                <label for="observacao" class="col-form-label">Observação:</label>
+                                <input type="text" name="edit_observacao" class="form-control" id="edit_observacao" placeholder="Informe a sua idade">
                             </div>
                             <div class="mb-3">
                                 <label for="tipo" class="col-form-label">Tipo de data:</label>
@@ -137,7 +144,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Fechar</button>
-                                <input type="submit" class="btn btn-success btn-sm" id="edit-data-btn" value="Editar" />
+                                <input type="submit" class="btn btn-success btn-sm" id="edit-data-btn" value="Salvar" />
                             </div>
                         </form>
                     </div>

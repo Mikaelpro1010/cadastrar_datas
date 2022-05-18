@@ -1,7 +1,7 @@
 <?php
     include_once "conexao.php";
 
-$query_datas = "SELECT id, nome, data, observação, tipo, cor FROM datas LIMIT 10";
+$query_datas = "SELECT id, nome, data, observacao, tipo, cor FROM datas LIMIT 20";
 $result_datas = $conn->prepare($query_datas);
 $result_datas->execute();
 
@@ -12,7 +12,7 @@ while($row_data = $result_datas->fetch(PDO::FETCH_ASSOC)){
             <td>$id</td>
             <td>$nome</td>
             <td>$data</td>
-            <td>$observação</td>
+            <td>$observacao</td>
             <td>$tipo</td>
             <td>$cor</td>
             <td>
