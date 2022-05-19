@@ -56,7 +56,7 @@ include_once "conexao.php";
                             <span id="msgAlertaErroCad"></span>
                             <div class="mb-3">
                                 <label for="nome" class="col-form-label">Nome:</label>
-                                <input type="text" name="nome" class="form-control" id="nome" placeholder="Informe seu nome completo">
+                                <input type="text" name="nome" class="form-control" id="nome" placeholder="Informe o nome da data">
                             </div>
                             <div class="mb-3">
                                 <label for="data" class="col-form-label">Data:</label>
@@ -64,7 +64,7 @@ include_once "conexao.php";
                             </div>
                             <div class="mb-3">
                                 <label for="observacao" class="col-form-label">Observação:</label>
-                                <input type="text" name="observacao" class="form-control" id="observacao" placeholder="Informe a sua idade">
+                                <input type="text" name="observacao" class="form-control" id="observacao" placeholder="Descreva a observação da data">
                             </div>
                             <div class="mb-3">
                                 <label for="tipo" class="col-form-label">Tipo de data:</label>
@@ -132,7 +132,7 @@ include_once "conexao.php";
 
                             <div class="mb-3">
                                 <label for="nome" class="col-form-label">Nome:</label>
-                                <input type="text" name="edit_nome" class="form-control" id="edit_nome" placeholder="Informe seu nome completo">
+                                <input type="text" name="edit_nome" class="form-control" id="edit_nome" placeholder="Informe o nome da data">
                             </div>
                             <div class="mb-3">
                                 <label for="data" class="col-form-label">Data:</label>
@@ -140,7 +140,7 @@ include_once "conexao.php";
                             </div>
                             <div class="mb-3">
                                 <label for="observacao" class="col-form-label">Observação:</label>
-                                <input type="text" name="edit_observacao" class="form-control" id="edit_observacao" placeholder="Informe a sua idade">
+                                <input type="text" name="edit_observacao" class="form-control" id="edit_observacao" placeholder="Descreva a observação">
                             </div>
                             <div class="mb-3">
                                 <label for="tipo" class="col-form-label">Tipo de data:</label>
