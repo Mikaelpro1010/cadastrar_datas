@@ -9,13 +9,13 @@ if (empty($dados['editid'])){
 }elseif (empty($dados['edit_nome'])){
     $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo nome!</div>'];
 }elseif (empty($dados['edit_data'])){
-    $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo email!</div>'];
+    $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo data!</div>'];
 }elseif (empty($dados['edit_observacao'])){
-    $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo sexo!</div>'];
+    $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo observacao!</div>'];
 }elseif (empty($dados['edit_tipo'])){
-    $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo idade!</div>'];
+    $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo tipo de data!</div>'];
 } elseif (empty($dados['edit_cor'])){
-    $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo idade!</div>'];
+    $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo cor!</div>'];
 } else{
     $query_datas = "UPDATE datas SET nome=:nome, data=:data, observacao=:observacao, tipo=:tipo, cor=:cor WHERE id=:id";
     $edit_datas = $conn->prepare($query_datas);

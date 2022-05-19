@@ -127,8 +127,8 @@
                         <form id="edit-data-form">
                             <span id="msgAlertaErroEdit"></span>
 
-                            <input type="hidden" name="id" id="editid">
-                            
+                            <input type="hidden" name="editid" id="editid">
+
                             <div class="mb-3">
                                 <label for="nome" class="col-form-label">Nome:</label>
                                 <input type="text" name="edit_nome" class="form-control" id="edit_nome" placeholder="Informe seu nome completo">
