@@ -18,7 +18,7 @@ if (empty($dados['id'])){
     $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo idade!</div>'];
 } else{
     $query_datas = "UPDATE datas SET nome=:nome, data=:data, observacao=:observacao, tipo=:tipo, cor=:cor WHERE id=:id";
-    $edit_datas = $conn->prepare($query_usuario);
+    $edit_datas = $conn->prepare($query_datas);
     $edit_datas->bindParam(':nome', $dados['edit_nome']);
     $edit_datas->bindParam(':data', $dados['edit_data']);
     $edit_datas->bindParam(':observacao', $dados['edit_observacao']);

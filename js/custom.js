@@ -76,6 +76,9 @@ async function visData(id) {
 }
 
 async function editData(id) {
+
+    msgAlertaErroEdit.innerHTML= "";
+
     const dados = await fetch('visualizar.php?id=' + id);
     const resposta = await dados.json();
     console.log(resposta);
