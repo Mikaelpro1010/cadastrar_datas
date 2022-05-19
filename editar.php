@@ -4,31 +4,31 @@ include_once "conexao.php";
 
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-if (empty($dados['nome'])){
+if (empty($dados['id'])){
+    $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Tente mais tarde!</div>'];
+}elseif (empty($dados['edit_nome'])){
     $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo nome!</div>'];
-} elseif (empty($dados['entrada_date'])){
+}elseif (empty($dados['edit_data'])){
     $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo email!</div>'];
-} elseif (empty($dados['tipo'])){
-    $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo tipo data!</div>'];
-} elseif (empty($dados['observacao'])){
-    $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo observação!</div>'];
-} elseif (empty($dados['cor'])){
-    $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo cor!</div>'];
-} 
-else{
-    $query_datas = "INSERT INTO datas (nome, data, observacao, tipo, cor) VALUES(:nome, :data, :observacao, :tipo, :cor)";
-    $cad_data = $conn->prepare($query_datas);
-    $cad_data->bindParam(':nome', $dados['nome']);
-    $cad_data->bindParam(':data', $dados['entrada_date']);
-    $cad_data->bindParam(':observacao', $dados['observacao']);
-    $cad_data->bindParam(':tipo', $dados['tipo']);
-    $cad_data->bindParam(':cor', $dados['cor']);
-    $cad_data->execute();
+}elseif (empty($dados['edit_observacao'])){
+    $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo sexo!</div>'];
+}elseif (empty($dados['edit_tipo'])){
+    $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo idade!</div>'];
+} elseif (empty($dados['edit_cor'])){
+    $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo idade!</div>'];
+} else{
+    $query_datas = "UPDATE datas SET nome=:nome, data=:data, observacao=:observacao, tipo=:tipo, cor=:cor WHERE id=:id";
+    $edit_datas = $conn->prepare($query_usuario);
+    $edit_datas->bindParam(':nome', $dados['edit_nome']);
+    $edit_datas->bindParam(':data', $dados['edit_data']);
+    $edit_datas->bindParam(':observacao', $dados['edit_observacao']);
+    $edit_datas->bindParam(':tipo', $dados['edit_tipo']);
+    $edit_datas->bindParam(':cor', $dados['edit_cor']);
 
-    if ($cad_data->rowCount()) {
-        $retorna = ['erro' => false, 'msg' => '<div class="alert alert-success" role="alert">Usuário cadastrado com sucesso!</div>'];
+    if ($edit_datas->execute()) {
+        $retorna = ['erro' => false, 'msg' => '<div class="alert alert-success" role="alert">Usuário editado com sucesso!</div>'];
     } else {
-        $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Usuário não cadastrado com sucesso!</div>'];
+        $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Usuário não editado com sucesso!</div>'];
     }
 }
 

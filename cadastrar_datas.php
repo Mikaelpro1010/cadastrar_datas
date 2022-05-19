@@ -126,6 +126,9 @@
                     <div class="modal-body">
                         <form id="edit-data-form">
                             <span id="msgAlertaErroEdit"></span>
+
+                            <input type="hidden" name="id" id="editid">
+                            
                             <div class="mb-3">
                                 <label for="nome" class="col-form-label">Nome:</label>
                                 <input type="text" name="edit_nome" class="form-control" id="edit_nome" placeholder="Informe seu nome completo">
@@ -141,6 +144,10 @@
                             <div class="mb-3">
                                 <label for="tipo" class="col-form-label">Tipo de data:</label>
                                 <input type="text" name="edit_tipo" class="form-control" id="edit_tipo" placeholder="Informe o tipo de data">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cor" class="col-form-label">Cor:</label>
+                                <input type="text" name="edit_cor" class="form-control" id="edit_cor" placeholder="Informe o tipo de data">
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Fechar</button>

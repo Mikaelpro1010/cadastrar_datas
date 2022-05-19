@@ -1,7 +1,9 @@
 let number = document.getElementById("entrada_date").value;
 const Form = document.getElementById("cad-data-form");
+const editForm = document.getElementById("edit-data-form");
 const cadModal = new bootstrap.Modal(document.getElementById("cadDataModal"));
 const msgAlertaErroCad = document.getElementById("msgAlertaErroCad");
+const msgAlertaErroEdit = document.getElementById("msgAlertaErroEdit");
 const msgAlerta = document.getElementById("msgAlerta");
 
 const tbody = document.querySelector("tbody");
@@ -83,12 +85,12 @@ async function editData(id) {
     } else {
         const editModal = new bootstrap.Modal(document.getElementById("editDataModal"));
         editModal.show();
-        document.getElementById("edit_id").innerHTML = resposta['dados'].id;
-        document.getElementById("edit_nome").innerHTML = resposta['dados'].nome;
-        document.getElementById("edit_data").innerHTML = resposta['dados'].data;
-        document.getElementById("edit_observacao").innerHTML = resposta['dados'].observacao;
-        document.getElementById("edit_tipo").innerHTML = resposta['dados'].tipo;
-        document.getElementById("edit_cor").innerHTML = resposta['dados'].cor;
+        document.getElementById("editid").value = resposta['dados'].id;
+        document.getElementById("edit_nome").value = resposta['dados'].nome;
+        document.getElementById("edit_data").value = resposta['dados'].data;
+        document.getElementById("edit_observacao").value = resposta['dados'].observacao;
+        document.getElementById("edit_tipo").value = resposta['dados'].tipo;
+        document.getElementById("edit_cor").value = resposta['dados'].cor;
 
     }
 }
@@ -99,9 +101,6 @@ editForm.addEventListener("submit", async (e) =>{
     document.getElementById("edit-data-btn").value = "Salvando...";
 
     const dadosForm = new FormData(editForm);
-    for (var dadosFormEdit of dadosForm.entries()){
-        console.log(dadosFormEdit[0]+ "-" + dadosFormEdit[1]);
-    }
 
     const dados = await fetch("editar.php",{
         method: "POST",
