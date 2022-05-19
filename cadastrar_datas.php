@@ -1,5 +1,5 @@
 <?php
-    include_once "conexao.php";
+include_once "conexao.php";
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Cadastrar datas</title>
 </head>
+
 <body>
     <div class="container">
         <div class="row mt-4">
@@ -70,11 +71,10 @@
                                 <input type="text" name="tipo" class="form-control" id="tipo" placeholder="Informe o tipo de data">
                             </div>
                             <p>Selecione a cor como legenda para a data:</p>
-                                <div>
-                                    <input type="color" id="cor" name="cor"
-                                        value="#e66465">
-                                    <label for="cor">Palheta de cores</label>
-                                </div>
+                            <div>
+                                <input type="color" id="cor" name="cor" value="#e66465">
+                                <label for="cor">Palheta de cores</label>
+                            </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Fechar</button>
                                 <input type="submit" class="btn btn-success btn-sm" id="cad-data-btn" value="Cadastrar" />
@@ -92,30 +92,31 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                            <span id="msgAlertaErroVis"></span>
-                            <dl class="row">
-                                <dt class="col-sm-3">ID</dt>
-                                <dd class="col-sm-9"><span id="idData"></span></dd>
+                        <span id="msgAlertaErroVis"></span>
+                        <dl class="row">
+                            <dt class="col-sm-3">ID</dt>
+                            <dd class="col-sm-9"><span id="idData"></span></dd>
 
-                                <dt class="col-sm-3">Nome</dt>
-                                <dd class="col-sm-9"><span id="nomeData"></span></dd>
+                            <dt class="col-sm-3">Nome</dt>
+                            <dd class="col-sm-9"><span id="nomeData"></span></dd>
 
-                                <dt class="col-sm-3">Data</dt>
-                                <dd class="col-sm-9"><span id="dataData"></span></dd>
+                            <dt class="col-sm-3">Data</dt>
+                            <dd class="col-sm-9"><span id="dataData"></span></dd>
 
-                                <dt class="col-sm-3">Observação</dt>
-                                <dd class="col-sm-9"><span id="observacaoData"></span></dd>
+                            <dt class="col-sm-3">Observação</dt>
+                            <dd class="col-sm-9"><span id="observacaoData"></span></dd>
 
-                                <dt class="col-sm-3">Tipos de data</dt>
-                                <dd class="col-sm-9"><span id="tipos_de_dataData"></span></dd>
+                            <dt class="col-sm-3">Tipos de data</dt>
+                            <dd class="col-sm-9"><span id="tipos_de_dataData"></span></dd>
 
-                                <dt class="col-sm-3">Cor</dt>
-                                <dd class="col-sm-9"><span id="corData"></span></dd>
-                            </dl>
+                            <dt class="col-sm-3">Cor</dt>
+                            <dd class="col-sm-9"><span id="corData"></span></dd>
+                        </dl>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="modal fade" id="editDataModal" tabindex="-1" aria-labelledby="#editDataModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -158,7 +159,29 @@
                 </div>
             </div>
         </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="js/custom.js"></script>
+
+        <div class="modal fade" id="apagarDataModal" tabindex="-1" aria-labelledby="#apagarDataModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="apagarDataModalLabel">Tem certeza que deseja apagar a data?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <span id="msgAlertaErroEdit"></span>
+
+                    <div class="modal-footer">
+                        <input type="hidden" name="apagarid" id="apagarid">
+                        <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Fechar</button>
+                        <input type="submit" class="btn btn-success btn-sm" id="edit-data-btn" onclick= "apagarData()" value="Apagar" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="js/custom.js"></script>
 </body>
+
 </html>

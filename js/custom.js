@@ -2,6 +2,7 @@ let number = document.getElementById("entrada_date").value;
 const Form = document.getElementById("cad-data-form");
 const editForm = document.getElementById("edit-data-form");
 const cadModal = new bootstrap.Modal(document.getElementById("cadDataModal"));
+const apagaModal = new bootstrap.Modal(document.getElementById("apagarDataModal"));
 const msgAlertaErroCad = document.getElementById("msgAlertaErroCad");
 const msgAlertaErroEdit = document.getElementById("msgAlertaErroEdit");
 const msgAlerta = document.getElementById("msgAlerta");
@@ -120,3 +121,21 @@ editForm.addEventListener("submit", async (e) =>{
     }
     document.getElementById("edit-data-btn").value = "Salvar";
 })
+
+async function apagarData(){
+    const id = document.getElementById("apagarid").value;
+
+    console.log(id);
+
+    const dados = await fetch('apagar.php?id=' +id);
+
+    listarDatas(1);
+
+    apagaModal.hide();
+}
+
+function abrirModal(id){
+    document.getElementById("apagarid").value = id;
+    apagaModal.show();
+}
+

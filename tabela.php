@@ -20,6 +20,8 @@ while($row_data = $result_datas->fetch(PDO::FETCH_ASSOC)){
             onclick='visData($id)'>Visualizar</button>
             <button id='$id' class='btn btn-warning btn-sm'
             onclick='editData($id)'>Editar</button>
+            <button id='$id' class='btn btn-danger btn-sm'
+            onclick='abrirModal($id)'>Apagar</button>
             </td>
             </tr>";
 }
