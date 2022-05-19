@@ -4,7 +4,7 @@ include_once "conexao.php";
 
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-if (empty($dados['id'])){
+if (empty($dados['editid'])){
     $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Tente mais tarde!</div>'];
 }elseif (empty($dados['edit_nome'])){
     $retorna = ['erro' => true, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Necessário preencher o campo nome!</div>'];
