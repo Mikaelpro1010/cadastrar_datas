@@ -17,33 +17,18 @@ include_once "conexao.php";
         <div class="row mt-4">
             <div class="col-lg-12 d-flex justify-content-between align-itens-center">
                 <h4>Datas Cadastradas</h4>
-                <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#cadDataModal">
-                    Cadastrar datas
-                </button>
+                <div>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#cadDataModal">
+                        Cadastrar datas
+                    </button>
+                    <a class="btn btn-primary" href="http://localhost/Calend%c3%a1rio_HTML/calendario.php">Acesso a contagem de datas</a>
+                </div>
             </div>
-            <hr>
+            <hr class="mt-3">
             <span id="msgAlerta"></span>
         </div>
-        <div class="row">
-            <div class="table-reponsive">
-                <table class="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>Data</th>
-                            <th>Observação</th>
-                            <th>Tipo de data</th>
-                            <th>Cor</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+        <div id = 'tabela' class="row"></div>
 
-                    </tbody>
-                </table>
-            </div>
-        </div>
         <div class="modal fade" id="cadDataModal" tabindex="-1" aria-labelledby="#cadDataModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -179,7 +164,6 @@ include_once "conexao.php";
                 </div>
             </div>
         </div>
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="js/custom.js"></script>
 </body>

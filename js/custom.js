@@ -6,16 +6,18 @@ const apagaModal = new bootstrap.Modal(document.getElementById("apagarDataModal"
 const msgAlertaErroCad = document.getElementById("msgAlertaErroCad");
 const msgAlertaErroEdit = document.getElementById("msgAlertaErroEdit");
 const msgAlerta = document.getElementById("msgAlerta");
+const editModal = new bootstrap.Modal(document.getElementById("editDataModal"));
 
 const tbody = document.querySelector("tbody");
+const tabela = document.getElementById("tabela");
 
-const listarDatas = async () => {
-    const dados = await fetch("./tabela.php");
+const listarDatas = async (pagina) => {
+    const dados = await fetch("./tabela.php?pagina="+pagina);
     const resposta = await dados.text();
-    tbody.innerHTML = resposta;
+    tabela.innerHTML = resposta;
 }
 
-listarDatas();
+listarDatas(1);
 
 Form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -117,10 +119,12 @@ editForm.addEventListener("submit", async (e) =>{
         msgAlertaErroEdit.innerHTML = resposta['msg'];
     } else{
         msgAlertaErroEdit.innerHTML = resposta['msg'];
-        listarDatas(1)
+        listarDatas(1);
+        editModal.hide();
+        console.log(editModal);
     }
     document.getElementById("edit-data-btn").value = "Salvar";
-})
+});
 
 async function apagarData(){
     const id = document.getElementById("apagarid").value;
@@ -138,4 +142,9 @@ function abrirModal(id){
     document.getElementById("apagarid").value = id;
     apagaModal.show();
 }
+
+//function fecharModal(){
+    //const editModal = new bootstrap.Modal(document.getElementById("editDataModal"));
+    //editModal.hide();
+
 
